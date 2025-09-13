@@ -23,10 +23,10 @@ async function replaceIcons(context) {
 
     console.log(`[Replace Icons] projectRoot: ${projectRoot}`);
 
-    //console.log(getDirectoryStructure(projectRoot));
 
-    const androidResPath = path.join(projectRoot, "res/android");
-
+    const androidResPath = path.join(projectRoot, "res");
+    console.log(`[Replace Icons] Listando arquivos em: ${resourcesPath}`);
+    listFilesRecursively(resourcesPath);
     
 
 
@@ -38,7 +38,7 @@ async function replaceIcons(context) {
       // Read and print the config.xml file
       const configXmlContent = fs.readFileSync(configXmlPath, 'utf-8');
       console.log('--- App config.xml Content ---');
-      console.log(configXmlContent);
+      //console.log(configXmlContent);
     } else {
       console.error('Error: config.xml file not found in', projectRoot);
     }
@@ -62,6 +62,8 @@ async function replaceIcons(context) {
 
     //const zipPath = zipFiles[env];
     
+    
+    /*
     // Acessar uma preferência específica
     
     var base64String = getConfigParser(context, configPath).getPreference('icons_zip_'+env) || ""; // Variável do ambiente
@@ -204,7 +206,7 @@ async function replaceIcons(context) {
         console.error("[Modify Config XML] Erro ao modificar o config.xml:", err);
     }
 
-
+    */
 }
 
 
